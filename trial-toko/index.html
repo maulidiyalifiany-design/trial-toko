@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toko Apa Aja Ada</title>
+    <style>
+        body{
+            font-family: Arial;
+            background:#f4f7f5;
+            margin:0;
+        }
+
+        header{
+            background:#2e7d32;
+            color:white;
+            padding:20px;
+            text-align:center;
+        }
+
+        .container{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            margin-top:30px;
+        }
+
+        .produk{
+            background:white;
+            width:250px;
+            margin:15px;
+            padding:15px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+            text-align:center;
+        }
+
+        .produk img{
+            width:100%;
+            height:180px;
+            object-fit:cover;
+            border-radius:10px;
+        }
+
+        .harga{
+            color:#2e7d32;
+            font-size:20px;
+            font-weight:bold;
+        }
+
+        button{
+            background:#25D366;
+            color:white;
+            border:none;
+            padding:10px 15px;
+            border-radius:8px;
+            cursor:pointer;
+            margin-top:10px;
+        }
+
+        button:hover{
+            background:#1da851;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Toko Apa Aja Ada</h1>
+    <p>Semua ada</p>
+</header>
+
+<div class="container">
+
+    <div class="produk">
+        <img src="gambar/kasur.jpg">
+        <h3>kasur empuk dan nyaman</h3>
+        <p class="harga">Rp 1.500.000</p>
+        <button onclick="pesan('Kasur Nyaman')">BUY</button>
+    </div>
+
+    <div class="produk">
+        <img src="gambar/macbook.jpg">
+        <h3>macbook canggih</h3>
+        <p class="harga">Rp 12.000.000</p>
+        <button onclick="pesan('Macbook Canggih')">BUY</button>
+    </div>
+</div>
+
+<script>
+function pesan(namaProduk){
+    var nomor = "6281918235647"; // GANTI NOMOR WA KAMU
+    var pesan = "Halo, saya mau pesan " + namaProduk;
+    var url = "https://wa.me/" + nomor + "?text=" + encodeURIComponent(pesan);
+    window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>
